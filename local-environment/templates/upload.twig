@@ -1,0 +1,15 @@
+{% extends "base.twig" %}
+{% block title %} Upload files {% endblock %}
+{% block content %}
+    <form action="{{ url_for('upload') }}" enctype="multipart/form-data" method="POST">
+        <input type="file" name="files[]" multiple>
+        <input type="submit" value="Upload">
+    </form>
+    {% if errors is defined %}
+        <ol>
+            {% for error in errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ol>
+    {% endif %}
+{% endblock %}

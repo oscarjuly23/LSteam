@@ -1,0 +1,15 @@
+{% extends "base.twig" %}
+
+{% block title %}Home page{% endblock %}
+
+{% block content %}
+    <h1>Hello world!</h1>
+
+    {% if notifications is not empty %}
+        <ol>
+            {% for notification in notifications %}
+                <li>{{ notification }}</li>
+            {% endfor %}
+        </ol>
+    {% endif %}
+{% endblock %}
